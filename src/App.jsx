@@ -50,13 +50,18 @@ function App() {
               <form>
                 <div className=" w-full relative">
                   <RiSearch2Line className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-300" />
-                  <input className="bg-[#1F1D2B] w-full py-2 pl-10 pr-4 rounded-lg text-gray-300 outline-none"></input>
+                  <input className="bg-[#1F1D2B] w-full py-2 pl-10 pr-4 rounded-lg text-gray-300 outline-none" placeholder="Search">
+
+                  </input>
                 </div>
               </form>
             </div>
-            <nav>
-              <a href="#">hot dishes</a>
-              {/* min1:34:28 */}
+            <nav className=" text-gray-300 flex items-center ">
+              <a href="#" className="border-b py-2 pr-4 border-[#ec7c6a]">hot dishes</a>
+              <a href="#" className="border-b py-2 pr-4">Cold dishes</a>
+              <a href="#" className="border-b py-2 pr-4">Soup</a>
+              <a href="#" className="border-b py-2">Grill</a>
+              {/*1.38.12*/}
             </nav>
           </header>
         </div>
