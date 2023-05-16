@@ -9,9 +9,11 @@ import {
   RiSettings2Line,
 } from "react-icons/ri";
 
-export const Sidebar = () => {
+export const Sidebar = (props) => {
+    const {showMenu} = props;
   return (
-    <div className="bg-[#1F1D2B] fixed lg:left-0 top-0 w-28 h-full flex flex-col justify-between py-6 rounded-tr-xl rounded-br-xl z-50 -left-full">
+    <div className={`bg-[#1F1D2B] fixed lg:left-0 top-0 w-28 h-full flex flex-col justify-between py-6 rounded-tr-xl rounded-br-xl z-50  transition-all
+    ${showMenu ? "left-0" : "-left-full"}`}>
       <div>
         <ul className="pl-4">
           <li>
