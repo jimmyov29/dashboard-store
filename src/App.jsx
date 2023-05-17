@@ -3,6 +3,7 @@ import React from "react";
 import { Sidebar } from "./components/shared/Sidebar";
 import {
   RiAddLine,
+  RiArrowDownSLine,
   RiCloseLine,
   RiLightbulbLine,
   RiMenu2Fill,
@@ -37,12 +38,12 @@ function App() {
           {showMenu ? <RiCloseLine /> : <RiMenu2Fill />}
         </button>
       </nav>
-      <main className="lg:pl-28 grid grid-cols-1 lg:grid-cols-8">
+      <main className="lg:pl-28 grid grid-cols-1 lg:grid-cols-8 p-4">
         <div className="lg:col-span-6 ">
           {/* Header */}
-          <header className="p-4">
+          <header >
           {/* title and searh */}
-            <div className="flex flex-col gap-4 mb-6">
+            <div className="flex flex-col md:flex-row md: justify-between md:items-center gap-4 mb-6"> 
               <div>
                 <h1 className=" text-2xl text-gray-300">Jeager Restor</h1>
                 <p className=" text-gray-500">16 mayo 2023</p>
@@ -56,14 +57,25 @@ function App() {
                 </div>
               </form>
             </div>
-            <nav className=" text-gray-300 flex items-center ">
-              <a href="#" className="border-b py-2 pr-4 border-[#ec7c6a]">hot dishes</a>
-              <a href="#" className="border-b py-2 pr-4">Cold dishes</a>
-              <a href="#" className="border-b py-2 pr-4">Soup</a>
-              <a href="#" className="border-b py-2">Grill</a>
+            <nav className=" text-gray-300 flex items-center justify-between md:justify-start  md: gap-8 border-b">
+              <a href="#" className=" relative  py-2 pr-4 text-[#ec7c6a] before:w-1/2 before:h-[2px] before:absolute before:bg-[#ec7c6a] before:left-0 before:rounded-full before:-bottom-[1px] ">hot dishes</a>
+              <a href="#" className=" py-2 pr-4">Cold dishes</a>
+              <a href="#" className=" py-2 pr-4">Soup</a>
+              <a href="#" className=" py-2">Grill</a>
               {/*1.38.12*/}
             </nav>
           </header>
+            {/* Title content */}
+            <div  className="flex items-center justify-between " >
+              <h2 className=" text-xl text-gray-300">Choose Dishes</h2>
+              <button className="flex items-center gap-4 text-gray-300 bg-[#1f1d2b] py-2 pr-4 rounded-lg"> <RiArrowDownSLine/> Dine in</button>
+            </div>
+            {/* Content */}
+            <div>
+              {/* Card */}
+
+              
+            </div>
         </div>
         <div className="lg:col-span-2  fixed lg:carrito right-0 "> carrito</div>
       </main>
