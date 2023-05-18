@@ -5,7 +5,7 @@ import {
   RiAddLine,
   RiArrowDownSLine,
   RiCloseLine,
-  RiLightbulbLine,
+  RiDeleteBin6Line,
   RiMenu2Fill,
   RiPieChart2Line,
   RiSearch2Line,
@@ -38,8 +38,8 @@ function App() {
           {showMenu ? <RiCloseLine /> : <RiMenu2Fill />}
         </button>
       </nav>
-      <main className="lg:pl-32 grid grid-cols-1 lg:grid-cols-8 p-8 pb-20">
-        <div className="lg:col-span-6 ">
+      <main className="lg:pl-32 grid grid-cols-1 lg:grid-cols-8 p-4 pb-20">
+        <div className="lg:col-span-6 md:p-8 ">
           {/* Header */}
           <header>
             {/* title and searh */}
@@ -94,9 +94,7 @@ function App() {
                 className="w-40 h-40 object-cover -mt-20 shadow-2xl rounded-full"
               ></img>
               <p className="text-xl">Spicy Seasoned seafood nodles</p>
-              <span className="text-gray-400">
-                $2.29
-              </span>
+              <span className="text-gray-400">$2.29</span>
               <p className="text-gray-600">20 bowls available</p>
             </div>
             {/* Card */}
@@ -106,9 +104,7 @@ function App() {
                 className="w-40 h-40 object-cover -mt-20 shadow-2xl rounded-full"
               ></img>
               <p className="text-xl">Spicy Seasoned seafood nodles</p>
-              <span className="text-gray-400">
-                $2.29
-              </span>
+              <span className="text-gray-400">$2.29</span>
               <p className="text-gray-600">20 bowls available</p>
             </div>
             {/* Card */}
@@ -118,9 +114,7 @@ function App() {
                 className="w-40 h-40 object-cover -mt-20 shadow-2xl rounded-full"
               ></img>
               <p className="text-xl">Spicy Seasoned seafood nodles</p>
-              <span className="text-gray-400">
-                $2.29
-              </span>
+              <span className="text-gray-400">$2.29</span>
               <p className="text-gray-600">20 bowls available</p>
             </div>
             {/* Card */}
@@ -130,9 +124,7 @@ function App() {
                 className="w-40 h-40 object-cover -mt-20 shadow-2xl rounded-full"
               ></img>
               <p className="text-xl">Spicy Seasoned seafood nodles</p>
-              <span className="text-gray-400">
-                $2.29
-              </span>
+              <span className="text-gray-400">$2.29</span>
               <p className="text-gray-600">20 bowls available</p>
             </div>
             {/* Card */}
@@ -142,9 +134,7 @@ function App() {
                 className="w-40 h-40 object-cover -mt-20 shadow-2xl rounded-full"
               ></img>
               <p className="text-xl">Spicy Seasoned seafood nodles</p>
-              <span className="text-gray-400">
-                $2.29
-              </span>
+              <span className="text-gray-400">$2.29</span>
               <p className="text-gray-600">20 bowls available</p>
             </div>
             {/* Card */}
@@ -154,14 +144,80 @@ function App() {
                 className="w-40 h-40 object-cover -mt-20 shadow-2xl rounded-full"
               ></img>
               <p className="text-xl">Spicy Seasoned seafood nodles</p>
-              <span className="text-gray-400">
-                $2.29
-              </span>
+              <span className="text-gray-400">$2.29</span>
               <p className="text-gray-600">20 bowls available</p>
             </div>
           </div>
         </div>
-        <div className="lg:col-span-2  fixed lg:carrito right-0 "> carrito</div>
+        <div className="lg:col-span-2  fixed lg:carrito right-0 top-0 bg-[#1F1D2B] w-full h-full">
+          {/* Orders */}
+          <div className="relative  pt-16 p-8 text-gray-300 h-full">
+            <RiCloseLine className="absolute  p-3 box-content text-gray-400 bg-[#262837] rounded-full left-4 top-4 text-xl" />
+            <h1 className=" text-2xl my-4">Order #15</h1>
+            {/* Pills buttons */}
+            <div className="flex items-center gap-4 flex-wrap mb-8">
+              <button className="bg-[#ec7c6a] py-2 px-4 rounded-xl">
+                Dine in
+              </button>
+              <button className="text-[#ec7c6a]  py-2 px-4 rounded-xl border border-gray-500">
+                To go
+              </button>
+              <button className="text-[#ec7c6a] py-2 px-4 rounded-xl border border-gray-500">
+                Delivery
+              </button>
+            </div>
+            {/* Card */}
+            <div>
+              <div className=" grid grid-cols-6 mb-4 p-4 ">
+                <h5 className="col-span-4">Items</h5>
+                <h5>Qty</h5>
+                <h5>Price</h5>
+              </div>
+              {/* Product */}
+              <div className="bg-[#262837] p-4 rounded-xl">
+                <div className=" grid grid-cols-6 mb-2">
+                  {/* Product Description */}
+                  <div className=" flex items-center gap-2 col-span-4">
+                    <img
+                      src="comida.png"
+                      className="w-10 h-10 object-cover
+                  "
+                    ></img>
+                    <div>
+                      <h5 className="text-sm">Spicy Seasoned sea...</h5>
+                      <p className="text-xs text-gray-500">$2.29</p>
+                    </div>
+                  </div>
+                  {/* Qty */}
+                  <div>
+                    <span>2</span>
+                  </div>
+                  {/* Price */}
+                  <div>
+                    <span>4.58</span>
+                  </div>
+                </div>
+                {/* Note */}
+                <div className="grid grid-cols-6 items-center">
+                  <form className="col-span-5 ">
+                    <input
+                      type="text"
+                      className="bg-[#1f1d2b] py-2 px-4 rounded-lg outline-none"
+                      placeholder="Order Note..."
+                    ></input>
+                  </form>
+                  <div>
+                    <button className=" border border-red-500 p-2 rounded-lg">
+                      <RiDeleteBin6Line className="text-red-500" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Submit payment */}
+            <div className="bg-red-300 absolute bottom-0 left-0"> Submit</div>
+          </div>
+        </div>
       </main>
     </div>
   );
