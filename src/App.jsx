@@ -149,9 +149,9 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="lg:col-span-2  fixed lg:carrito right-0 top-0 bg-[#1F1D2B] w-full h-full">
+        <div className="lg:col-span-2  fixed lg:static right-0 top-0 bg-[#1F1D2B] w-full h-full"> {/*quite el w-full*/}
           {/* Orders */}
-          <div className="relative  pt-16 p-8 text-gray-300 h-full">
+          <div className="relative  pt-16 p-8 text-gray-300 h-full overflow-scroll bg-red-400 pb-96">
             <RiCloseLine className="absolute  p-3 box-content text-gray-400 bg-[#262837] rounded-full left-4 top-4 text-xl" />
             <h1 className=" text-2xl my-4">Order #15</h1>
             {/* Pills buttons */}
@@ -174,7 +174,85 @@ function App() {
                 <h5>Price</h5>
               </div>
               {/* Product */}
-              <div className="bg-[#262837] p-4 rounded-xl">
+              <div className="bg-[#262837] p-4 rounded-xl mb-4">
+                <div className=" grid grid-cols-6 mb-2">
+                  {/* Product Description */}
+                  <div className=" flex items-center gap-2 col-span-4">
+                    <img
+                      src="comida.png"
+                      className="w-10 h-10 object-cover
+                  "
+                    ></img>
+                    <div>
+                      <h5 className="text-sm">Spicy Seasoned sea...</h5>
+                      <p className="text-xs text-gray-500">$2.29</p>
+                    </div>
+                  </div>
+                  {/* Qty */}
+                  <div>
+                    <span>2</span>
+                  </div>
+                  {/* Price */}
+                  <div>
+                    <span>4.58</span>
+                  </div>
+                </div>
+                {/* Note */}
+                <div className="grid grid-cols-6 items-center">
+                  <form className="col-span-5 ">
+                    <input
+                      type="text"
+                      className="bg-[#1f1d2b] py-2 px-4 rounded-lg outline-none"
+                      placeholder="Order Note..."
+                    ></input>
+                  </form>
+                  <div>
+                    <button className=" border border-red-500 p-2 rounded-lg">
+                      <RiDeleteBin6Line className="text-red-500" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-[#262837] p-4 rounded-xl mb-4">
+                <div className=" grid grid-cols-6 mb-2">
+                  {/* Product Description */}
+                  <div className=" flex items-center gap-2 col-span-4">
+                    <img
+                      src="comida.png"
+                      className="w-10 h-10 object-cover
+                  "
+                    ></img>
+                    <div>
+                      <h5 className="text-sm">Spicy Seasoned sea...</h5>
+                      <p className="text-xs text-gray-500">$2.29</p>
+                    </div>
+                  </div>
+                  {/* Qty */}
+                  <div>
+                    <span>2</span>
+                  </div>
+                  {/* Price */}
+                  <div>
+                    <span>4.58</span>
+                  </div>
+                </div>
+                {/* Note */}
+                <div className="grid grid-cols-6 items-center">
+                  <form className="col-span-5 ">
+                    <input
+                      type="text"
+                      className="bg-[#1f1d2b] py-2 px-4 rounded-lg outline-none"
+                      placeholder="Order Note..."
+                    ></input>
+                  </form>
+                  <div>
+                    <button className=" border border-red-500 p-2 rounded-lg">
+                      <RiDeleteBin6Line className="text-red-500" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-[#262837] p-4 rounded-xl mb-4">
                 <div className=" grid grid-cols-6 mb-2">
                   {/* Product Description */}
                   <div className=" flex items-center gap-2 col-span-4">
@@ -214,8 +292,21 @@ function App() {
                 </div>
               </div>
             </div>
-            {/* Submit payment */}
-            <div className="bg-red-300 absolute bottom-0 left-0"> Submit</div>
+          {/* Submit payment */}
+          <div className="bg-[#262837] absolute bottom-0 left-0 p-4 w-full">
+              <div className="flex items-center justify-between mb-4">
+                <span className=" text-gray-400">Discount</span>
+                <span>$0</span>
+              </div>
+              <div className="flex items-center justify-between mb-6">
+                <span className=" text-gray-400">Subtotal</span>
+                <span>$201.03</span>
+              </div>
+              <div>
+                <button className="bg-[#ec7c6a] w-full py-6 px-4 rounded-lg">Continue to payment</button>
+              </div>
+            {/* Lo movi arriba min */}
+            </div>
           </div>
         </div>
       </main>
