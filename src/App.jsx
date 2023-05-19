@@ -17,7 +17,13 @@ function App() {
   const [showOrder, setShowOrder] = useState(false);
   const toggleMenu = () => {
     setShowMenu(!showMenu);
+    setShowOrder(false);
   };
+
+  const toggleOrders= ()=>{
+    setShowOrder(!showOrder);
+    setShowMenu(false);
+  }
   return (
     <div className="bg-[#262837] w-full min-h-screen">
       <Sidebar showMenu={showMenu} />
@@ -31,15 +37,15 @@ function App() {
         <button className="p-2">
           <RiAddLine />
         </button>
-        <button className="p-2">
+        <button onClick={toggleOrders} className="p-2">
           <RiPieChart2Line />
         </button>
         <button onClick={toggleMenu} className="text-white p-2">
           {showMenu ? <RiCloseLine /> : <RiMenu2Fill />}
         </button>
       </nav>
-      <main className="lg:pl-32 grid grid-cols-1 lg:grid-cols-8 p-4 pb-20">
-        <div className="lg:col-span-6 md:p-8 ">
+      <main className="lg:pl-32 grid grid-cols-1 lg:grid-cols-8 pb-20">
+        <div className="lg:col-span-6 md:p-8 p-4">
           {/* Header */}
           <header>
             {/* title and searh */}
@@ -149,10 +155,10 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="lg:col-span-2  fixed lg:static right-0 top-0 bg-[#1F1D2B] w-full h-full"> {/*quite el w-full*/}
+        <div className={`lg:col-span-2  fixed   top-0 bg-[#1F1D2B] w-full h-full lg:right-0 lg:w-96 transition-all ${showOrder ? "right-0" : "-right-full"}`}> {/*quite el w-full*/}
           {/* Orders */}
-          <div className="relative  pt-16 p-8 text-gray-300 h-full overflow-scroll bg-red-400 pb-96">
-            <RiCloseLine className="absolute  p-3 box-content text-gray-400 bg-[#262837] rounded-full left-4 top-4 text-xl" />
+          <div className="relative  pt-16 p-8 lg:pt-8 text-gray-300 h-full overflow-scrol pb-96">
+            <RiCloseLine onClick={toggleOrders} className="lg:hidden absolute  p-3 box-content text-gray-400 bg-[#262837] rounded-full left-4 top-4 text-xl" />
             <h1 className=" text-2xl my-4">Order #15</h1>
             {/* Pills buttons */}
             <div className="flex items-center gap-4 flex-wrap mb-8">
@@ -173,6 +179,8 @@ function App() {
                 <h5>Qty</h5>
                 <h5>Price</h5>
               </div>
+              {/* Products */}
+              <div className="h-[400px] md:h-[700px] lg:h-[540px] overflow-scroll">
               {/* Product */}
               <div className="bg-[#262837] p-4 rounded-xl mb-4">
                 <div className=" grid grid-cols-6 mb-2">
@@ -291,6 +299,86 @@ function App() {
                   </div>
                 </div>
               </div>
+              <div className="bg-[#262837] p-4 rounded-xl mb-4">
+                <div className=" grid grid-cols-6 mb-2">
+                  {/* Product Description */}
+                  <div className=" flex items-center gap-2 col-span-4">
+                    <img
+                      src="comida.png"
+                      className="w-10 h-10 object-cover
+                  "
+                    ></img>
+                    <div>
+                      <h5 className="text-sm">Spicy Seasoned sea...</h5>
+                      <p className="text-xs text-gray-500">$2.29</p>
+                    </div>
+                  </div>
+                  {/* Qty */}
+                  <div>
+                    <span>2</span>
+                  </div>
+                  {/* Price */}
+                  <div>
+                    <span>4.58</span>
+                  </div>
+                </div>
+                {/* Note */}
+                <div className="grid grid-cols-6 items-center">
+                  <form className="col-span-5 ">
+                    <input
+                      type="text"
+                      className="bg-[#1f1d2b] py-2 px-4 rounded-lg outline-none"
+                      placeholder="Order Note..."
+                    ></input>
+                  </form>
+                  <div>
+                    <button className=" border border-red-500 p-2 rounded-lg">
+                      <RiDeleteBin6Line className="text-red-500" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-[#262837] p-4 rounded-xl mb-4">
+                <div className=" grid grid-cols-6 mb-2">
+                  {/* Product Description */}
+                  <div className=" flex items-center gap-2 col-span-4">
+                    <img
+                      src="comida.png"
+                      className="w-10 h-10 object-cover
+                  "
+                    ></img>
+                    <div>
+                      <h5 className="text-sm">Spicy Seasoned sea...</h5>
+                      <p className="text-xs text-gray-500">$2.29</p>
+                    </div>
+                  </div>
+                  {/* Qty */}
+                  <div>
+                    <span>2</span>
+                  </div>
+                  {/* Price */}
+                  <div>
+                    <span>4.58</span>
+                  </div>
+                </div>
+                {/* Note */}
+                <div className="grid grid-cols-6 items-center">
+                  <form className="col-span-5 ">
+                    <input
+                      type="text"
+                      className="bg-[#1f1d2b] py-2 px-4 rounded-lg outline-none"
+                      placeholder="Order Note..."
+                    ></input>
+                  </form>
+                  <div>
+                    <button className=" border border-red-500 p-2 rounded-lg">
+                      <RiDeleteBin6Line className="text-red-500" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              </div>
+              
             </div>
           {/* Submit payment */}
           <div className="bg-[#262837] absolute bottom-0 left-0 p-4 w-full">
