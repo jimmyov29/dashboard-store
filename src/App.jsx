@@ -162,6 +162,7 @@ function App() {
             <h1 className=" text-2xl my-4">Order #15</h1>
             {/* Pills buttons */}
             <div className="flex items-center gap-4 flex-wrap mb-8">
+            
               <button className="bg-[#ec7c6a] py-2 px-4 rounded-xl">
                 Dine in
               </button>
